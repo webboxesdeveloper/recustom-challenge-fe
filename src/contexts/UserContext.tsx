@@ -85,7 +85,7 @@ export const UserProvider: FC = ({ children }) => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'document.pdf'; // Specify the filename for the download
+    link.download = `${new Date().getTime()}.pdf`;
     link.click();
     URL.revokeObjectURL(url);
   };
